@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="form-container">
+
+        <table class="styled-table">
+            <tr>
+                <th>Edit</th>
+                <th>Id</th>
+                <th>tconst</th>
+                <th>Title</th>
+                <th>Year</th>
+                <th>runtime</th>
+                <th>genre</th>
+                <th>Rating</th>
+                <th>Link</th>
+            </tr>
+            {% for item in movies %}
+            <tr>
+                <td>
+                    <a href="{{request.base_url}}get_form_edit_data/{{item.id}}" title="Click to edit">
+                        <span class="fa fa-edit"></span>
+                    </a>
+                </td>
+                <td>
+                    {{item.id}}
+                </td>
+                <td>
+                    {{item.tconst}}
+                </td>
+                <td>
+                    {{item.primaryTitle}}
+                </td>
+                <td>
+                    {{item.startYear}}
+                </td>
+                <td>
+                    {{item.runtimeMinutes}}
+                </td>
+                <td>
+                    {{item.genres}}
+                </td>
+                <td>
+                    {{item.averageRating}}
+                </td>
+                
+                <td>
+                    <a href="https://www.imdb.com/title/{{item.tconst}}">url</a>
+                </td>
+                <td>
+
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+</div>
+
+{% endblock %}
