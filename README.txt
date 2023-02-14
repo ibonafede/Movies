@@ -66,19 +66,16 @@ Folder description
 
 Build the image and start the app:
 
-1) go to app directory
 
-cd app
-
-2) build the image:
+1) build the image:
 
  docker build -t fastapi-app-image:0.1 . 
 
-3) run the container
+2) run the container
 
 docker run -p 8000:8000 --name movies-app fastapi-app-image:0.1
 
-4) go to http://127.0.0.1:8000/
+3) go to http://127.0.0.1:8000/
 
 
 To do steps:
